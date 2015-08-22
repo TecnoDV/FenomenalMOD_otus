@@ -54,6 +54,7 @@ choice
 	  startup. If in doubt, select 'performance'..
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 config CPU_FREQ_DEFAULT_GOV_ALUCARD
  	bool "alucard"
   	select CPU_FREQ_GOV_ALUCARD
@@ -86,6 +87,8 @@ config CPU_FREQ_DEFAULT_GOV_WHEATLEY
 	help
 	  Use the CPUFreq governor 'wheatley' as defaul
 
+=======
+>>>>>>> 56946c5... cpufreq: add intelliactive
 config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	bool "intelliactive"
 	select CPU_FREQ_GOV_INTELLIACTIVE
@@ -171,6 +174,7 @@ endchoice
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 config CPU_FREQ_GOV_ALUCARD
 	tristate "'alucard' cpufreq governor"
@@ -194,6 +198,8 @@ config CPU_FREQ_GOV_WHEATLEY
 	tristate "'wheatley' cpufreq governor"
 	depends on CPU_FREQ
 
+=======
+>>>>>>> 56946c5... cpufreq: add intelliactive
 config CPU_FREQ_GOV_INTELLIACTIVE
 	tristate "'intelliactive' cpufreq policy governor"
 	help
