@@ -55,6 +55,7 @@ choice
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 config CPU_FREQ_DEFAULT_GOV_ALUCARD
  	bool "alucard"
   	select CPU_FREQ_GOV_ALUCARD
@@ -98,6 +99,8 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
 
+=======
+>>>>>>> 183f009... cpufreq: Add lionheart
 config CPU_FREQ_DEFAULT_GOV_LIONHEART
  	bool "lionheart"
  	select CPU_FREQ_GOV_LIONHEART
@@ -175,6 +178,7 @@ endchoice
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 config CPU_FREQ_GOV_ALUCARD
 	tristate "'alucard' cpufreq governor"
@@ -217,6 +221,8 @@ config CPU_FREQ_GOV_INTELLIACTIVE
 
 	  If in doubt, say N.
 
+=======
+>>>>>>> 183f009... cpufreq: Add lionheart
 config CPU_FREQ_GOV_LIONHEART
 	tristate "lionheart"
 	depends on CPU_FREQ

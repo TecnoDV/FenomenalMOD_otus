@@ -383,6 +383,7 @@ extern struct cpufreq_governor cpufreq_gov_smartmax;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_LIONHEART)
 extern struct cpufreq_governor cpufreq_gov_lionheart;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_lionheart)
+<<<<<<< HEAD
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE)
 extern struct cpufreq_governor cpufreq_gov_intelliactive;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_intelliactive)
@@ -402,6 +403,8 @@ extern struct cpufreq_governor cpufreq_gov_alucard;
 >>>>>>> 17afe6c... cpufreq: Add wheatley
 =======
 >>>>>>> 56946c5... cpufreq: add intelliactive
+=======
+>>>>>>> 183f009... cpufreq: Add lionheart
 #endif
 
 

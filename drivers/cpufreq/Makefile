@@ -4,6 +4,7 @@ obj-$(CONFIG_CPU_FREQ)			+= cpufreq.o
 obj-$(CONFIG_CPU_FREQ_STAT)             += cpufreq_stats.o
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # CPUfreq governors 
 =======
 # CPUfreq governors
@@ -17,6 +18,9 @@ obj-$(CONFIG_CPU_FREQ_GOV_WHEATLEY)     += cpufreq_wheatley.o
 =======
 >>>>>>> 56946c5... cpufreq: add intelliactive
 obj-$(CONFIG_CPU_FREQ_GOV_INTELLIACTIVE)+= cpufreq_intelliactive.o
+=======
+# CPUfreq governors
+>>>>>>> 183f009... cpufreq: Add lionheart
 obj-$(CONFIG_CPU_FREQ_GOV_LIONHEART)    += cpufreq_lionheart.o 
 obj-$(CONFIG_CPU_FREQ_GOV_SMARTMAX)     += cpufreq_smartmax.o 
 >>>>>>> f46fd8a... cpufreq: add Alucard
