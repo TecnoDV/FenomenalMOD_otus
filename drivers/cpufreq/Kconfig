@@ -49,6 +49,7 @@ choice
 	help
 	  This option sets which CPUFreq governor shall be loaded at
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  startup. If in doubt, select 'performance'.
 =======
 	  startup. If in doubt, select 'performance'..
@@ -107,12 +108,19 @@ config CPU_FREQ_DEFAULT_GOV_LIONHEART
 	help
 	 Use the CPUFreq governor 'lionheart' as default.
 
+=======
+	  startup. If in doubt, select 'performance'..
+
+>>>>>>> a5498d6... cpufreq: Add smartmax governor
 config CPU_FREQ_DEFAULT_GOV_SMARTMAX
         bool "smartmax"
         select CPU_FREQ_GOV_SMARTMAX
         help
           Use the CPUFreq governor 'smartmax' as default
+<<<<<<< HEAD
 >>>>>>> f46fd8a... cpufreq: add Alucard
+=======
+>>>>>>> a5498d6... cpufreq: Add smartmax governor
 
 config CPU_FREQ_DEFAULT_GOV_PERFORMANCE
 	bool "performance"
@@ -179,6 +187,7 @@ endchoice
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 config CPU_FREQ_GOV_ALUCARD
 	tristate "'alucard' cpufreq governor"
@@ -231,13 +240,18 @@ config CPU_FREQ_GOV_LIONHEART
 
 	  If in doubt, say N.
 
+=======
+>>>>>>> a5498d6... cpufreq: Add smartmax governor
 config CPU_FREQ_GOV_SMARTMAX
         tristate "'smartmax' cpufreq policy governor"
         select CPU_FREQ_TABLE
         help
           'smartmax' combined ondemand and smartass2
 
+<<<<<<< HEAD
 >>>>>>> f46fd8a... cpufreq: add Alucard
+=======
+>>>>>>> a5498d6... cpufreq: Add smartmax governor
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
 	help
