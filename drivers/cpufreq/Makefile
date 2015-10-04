@@ -2,32 +2,13 @@
 obj-$(CONFIG_CPU_FREQ)			+= cpufreq.o
 # CPUfreq stats
 obj-$(CONFIG_CPU_FREQ_STAT)             += cpufreq_stats.o
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 # CPUfreq governors 
-<<<<<<< HEAD
-=======
-# CPUfreq governors
-<<<<<<< HEAD
-<<<<<<< HEAD
 obj-$(CONFIG_CPU_FREQ_GOV_ALUCARD)	+= cpufreq_alucard.o
 obj-$(CONFIG_CPU_FREQ_GOV_ONDEMANDPLUS)  += cpufreq_ondemandplus.o
-=======
->>>>>>> 17afe6c... cpufreq: Add wheatley
 obj-$(CONFIG_CPU_FREQ_GOV_WHEATLEY)     += cpufreq_wheatley.o
-=======
->>>>>>> 56946c5... cpufreq: add intelliactive
 obj-$(CONFIG_CPU_FREQ_GOV_INTELLIACTIVE)+= cpufreq_intelliactive.o
-=======
-# CPUfreq governors
->>>>>>> 183f009... cpufreq: Add lionheart
 obj-$(CONFIG_CPU_FREQ_GOV_LIONHEART)    += cpufreq_lionheart.o 
 obj-$(CONFIG_CPU_FREQ_GOV_SMARTMAX)     += cpufreq_smartmax.o 
->>>>>>> f46fd8a... cpufreq: add Alucard
-=======
-obj-$(CONFIG_CPU_FREQ_GOV_SMARTMAX)     += cpufreq_smartmax.o 
->>>>>>> a5498d6... cpufreq: Add smartmax governor
 obj-$(CONFIG_CPU_FREQ_GOV_PERFORMANCE)	+= cpufreq_performance.o
 obj-$(CONFIG_CPU_FREQ_GOV_POWERSAVE)	+= cpufreq_powersave.o
 obj-$(CONFIG_CPU_FREQ_GOV_USERSPACE)	+= cpufreq_userspace.o

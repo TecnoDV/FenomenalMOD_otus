@@ -48,15 +48,8 @@ choice
 	default CPU_FREQ_DEFAULT_GOV_PERFORMANCE
 	help
 	  This option sets which CPUFreq governor shall be loaded at
-<<<<<<< HEAD
-<<<<<<< HEAD
 	  startup. If in doubt, select 'performance'.
-=======
-	  startup. If in doubt, select 'performance'..
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 config CPU_FREQ_DEFAULT_GOV_ALUCARD
  	bool "alucard"
   	select CPU_FREQ_GOV_ALUCARD
@@ -80,8 +73,6 @@ config CPU_FREQ_GOV_ONDEMANDPLUS
 
 	  If in doubt, say N.
 
-=======
->>>>>>> 17afe6c... cpufreq: Add wheatley
 config CPU_FREQ_DEFAULT_GOV_WHEATLEY
 	bool "wheatley"
 	select CPU_FREQ_GOV_WHEATLEY
@@ -89,8 +80,6 @@ config CPU_FREQ_DEFAULT_GOV_WHEATLEY
 	help
 	  Use the CPUFreq governor 'wheatley' as defaul
 
-=======
->>>>>>> 56946c5... cpufreq: add intelliactive
 config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	bool "intelliactive"
 	select CPU_FREQ_GOV_INTELLIACTIVE
@@ -100,27 +89,18 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
 
-=======
->>>>>>> 183f009... cpufreq: Add lionheart
 config CPU_FREQ_DEFAULT_GOV_LIONHEART
  	bool "lionheart"
  	select CPU_FREQ_GOV_LIONHEART
 	help
 	 Use the CPUFreq governor 'lionheart' as default.
-
-=======
 	  startup. If in doubt, select 'performance'..
 
->>>>>>> a5498d6... cpufreq: Add smartmax governor
 config CPU_FREQ_DEFAULT_GOV_SMARTMAX
         bool "smartmax"
         select CPU_FREQ_GOV_SMARTMAX
         help
           Use the CPUFreq governor 'smartmax' as default
-<<<<<<< HEAD
->>>>>>> f46fd8a... cpufreq: add Alucard
-=======
->>>>>>> a5498d6... cpufreq: Add smartmax governor
 
 config CPU_FREQ_DEFAULT_GOV_PERFORMANCE
 	bool "performance"
@@ -183,12 +163,6 @@ config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 
 endchoice
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 config CPU_FREQ_GOV_ALUCARD
 	tristate "'alucard' cpufreq governor"
 	depends on CPU_FREQ
@@ -205,14 +179,10 @@ config CPU_FREQ_DEFAULT_GOV_ONDEMANDPLUS
 	  governor. If unsure have a look at the help section of the
 	  driver. Fallback governor will be the performance governor.
 
-=======
->>>>>>> 17afe6c... cpufreq: Add wheatley
 config CPU_FREQ_GOV_WHEATLEY
 	tristate "'wheatley' cpufreq governor"
 	depends on CPU_FREQ
 
-=======
->>>>>>> 56946c5... cpufreq: add intelliactive
 config CPU_FREQ_GOV_INTELLIACTIVE
 	tristate "'intelliactive' cpufreq policy governor"
 	help
@@ -230,8 +200,6 @@ config CPU_FREQ_GOV_INTELLIACTIVE
 
 	  If in doubt, say N.
 
-=======
->>>>>>> 183f009... cpufreq: Add lionheart
 config CPU_FREQ_GOV_LIONHEART
 	tristate "lionheart"
 	depends on CPU_FREQ
@@ -240,18 +208,12 @@ config CPU_FREQ_GOV_LIONHEART
 
 	  If in doubt, say N.
 
-=======
->>>>>>> a5498d6... cpufreq: Add smartmax governor
 config CPU_FREQ_GOV_SMARTMAX
         tristate "'smartmax' cpufreq policy governor"
         select CPU_FREQ_TABLE
         help
           'smartmax' combined ondemand and smartass2
 
-<<<<<<< HEAD
->>>>>>> f46fd8a... cpufreq: add Alucard
-=======
->>>>>>> a5498d6... cpufreq: Add smartmax governor
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
 	help
