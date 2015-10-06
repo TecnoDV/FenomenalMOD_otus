@@ -230,6 +230,10 @@ obj-$(CONFIG_SND_SOC_WM_HUBS)	+= snd-soc-wm-hubs.o
 obj-$(CONFIG_SND_SOC_MSM_STUB)  += snd-soc-msm-stub.o
 obj-$(CONFIG_SND_SOC_TLV320AIC3253) += snd-soc-tlv320aic3253.o
 obj-$(CONFIG_SND_SOC_TFA9890) += snd-soc-tfa9890.o
+<<<<<<< HEAD
+=======
+obj-$(CONFIG_SOUND_CONTROL_HAX_3_GPL) += sound_control_3_gpl.o
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 
 # Amp
 obj-$(CONFIG_SND_SOC_MAX9877)	+= snd-soc-max9877.o

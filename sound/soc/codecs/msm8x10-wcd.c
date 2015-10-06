@@ -28,6 +28,10 @@
 #include <linux/of_gpio.h>
 #include <linux/regulator/consumer.h>
 #include <linux/mfd/wcd9xxx/pdata.h>
+<<<<<<< HEAD
+=======
+#include <linux/mfd/wcd9xxx/core.h>
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 #include <sound/pcm.h>
 #include <sound/pcm_params.h>
 #include <sound/soc.h>
@@ -38,7 +42,11 @@
 #include <sound/q6core.h>
 #include "msm8x10-wcd.h"
 #include "wcd9xxx-resmgr.h"
+<<<<<<< HEAD
 #include "msm8x10_wcd_registers.h"
+=======
+#include "../msm/qdsp6v2/q6core.h"
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 #include "wcd9xxx-common.h"
 
 #define MSM8X10_WCD_RATES (SNDRV_PCM_RATE_8000 | SNDRV_PCM_RATE_16000 |\
@@ -526,10 +534,29 @@ static int msm8x10_wcd_readable(struct snd_soc_codec *ssc, unsigned int reg)
 	return msm8x10_wcd_reg_readable[reg];
 }
 
+<<<<<<< HEAD
 static int msm8x10_wcd_write(struct snd_soc_codec *codec, unsigned int reg,
 			     unsigned int value)
 {
 	int ret;
+=======
+#ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
+extern int snd_hax_reg_access(unsigned int);
+extern unsigned int snd_hax_cache_read(unsigned int);
+extern void snd_hax_cache_write(unsigned int, unsigned int);
+#endif
+
+#ifndef CONFIG_SOUND_CONTROL_HAX_3_GPL
+static
+#endif
+int msm8x10_wcd_write(struct snd_soc_codec *codec, unsigned int reg,
+unsigned int value)
+{
+	int ret;
+#ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
+	int val;
+#endif
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 	dev_dbg(codec->dev, "%s: Write to reg 0x%x\n", __func__, reg);
 	if (reg == SND_SOC_NOPM)
 		return 0;
@@ -542,12 +569,37 @@ static int msm8x10_wcd_write(struct snd_soc_codec *codec, unsigned int reg,
 			dev_err(codec->dev, "Cache write to %x failed: %d\n",
 				reg, ret);
 	}
+<<<<<<< HEAD
 
 	return __msm8x10_wcd_reg_write(codec->control_data, reg, (u8)value);
 }
 
 static unsigned int msm8x10_wcd_read(struct snd_soc_codec *codec,
 				unsigned int reg)
+=======
+#ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
+	 if (!snd_hax_reg_access(reg)) {
+	 if (!((val = snd_hax_cache_read(reg)) != -1)) {
+	 	val = wcd9xxx_reg_read_safe(codec->control_data, reg);
+	 	}
+	 } else {
+	 	snd_hax_cache_write(reg, value);
+	 	val = value;
+	 }
+	 return __msm8x10_wcd_reg_write(codec->control_data, reg, val);
+#else
+
+	return __msm8x10_wcd_reg_write(codec->control_data, reg, (u8)value);
+#endif
+}
+#ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
+EXPORT_SYMBOL(msm8x10_wcd_write);
+#endif
+#ifndef CONFIG_SOUND_CONTROL_HAX_3_GPL
+static
+#endif
+unsigned int msm8x10_wcd_read(struct snd_soc_codec *codec,unsigned int reg)
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 {
 	unsigned int val;
 	int ret;
@@ -1171,6 +1223,7 @@ static const struct snd_kcontrol_new msm8x10_wcd_snd_controls[] = {
 			  MSM8X10_WCD_A_CDC_TX2_VOL_CTL_GAIN,
 			  -84, 40, digital_gain),
 
+<<<<<<< HEAD
 	SOC_SINGLE_TLV("ADC1 Volume", MSM8X10_WCD_A_TX_1_EN, 2,
 					19, 0, analog_gain),
 	SOC_SINGLE_TLV("ADC2 Volume", MSM8X10_WCD_A_TX_2_EN, 2,
@@ -1178,6 +1231,8 @@ static const struct snd_kcontrol_new msm8x10_wcd_snd_controls[] = {
 	SOC_SINGLE_TLV("ADC3 Volume", MSM8X10_WCD_A_TX_3_EN, 2,
 					19, 0, analog_gain),
 
+=======
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 	SOC_SINGLE_S8_TLV("IIR1 INP1 Volume",
 			  MSM8X10_WCD_A_CDC_IIR1_GAIN_B1_CTL,
 			  -84, 40, digital_gain),
@@ -2821,7 +2876,11 @@ static int msm8x10_wcd_enable_ext_mb_source(struct snd_soc_codec *codec,
 	return ret;
 }
 
+<<<<<<< HEAD
 #if !defined(CONFIG_SND_SOC_TPA6165A2) && !defined(CONFIG_SND_SOC_FSA8500)
+=======
+#ifndef CONFIG_SND_SOC_TPA6165A2
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 static int msm8x10_wcd_enable_mbhc_micbias(struct snd_soc_codec *codec,
 	 bool enable)
 {
@@ -3248,6 +3307,16 @@ done:
 	return rc;
 }
 
+<<<<<<< HEAD
+=======
+#ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
+struct snd_kcontrol_new *gpl_faux_snd_controls_ptr =
+ 	(struct snd_kcontrol_new *)msm8x10_wcd_snd_controls;
+struct snd_soc_codec *fauxsound_codec_ptr;
+EXPORT_SYMBOL(fauxsound_codec_ptr);
+#endif
+
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 static int msm8x10_wcd_codec_probe(struct snd_soc_codec *codec)
 {
 	struct msm8x10_wcd_priv *msm8x10_wcd_priv;
@@ -3256,6 +3325,14 @@ static int msm8x10_wcd_codec_probe(struct snd_soc_codec *codec)
 	int i, ret = 0;
 	struct msm8x10_wcd_pdata *pdata;
 
+<<<<<<< HEAD
+=======
+#ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
+	 pr_info("msm8x10_wcd codec probe...\n");
+	 fauxsound_codec_ptr = codec;
+#endif
+
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 	dev_dbg(codec->dev, "%s()\n", __func__);
 
 	msm8x10_wcd_priv = devm_kzalloc(codec->dev,
@@ -3318,7 +3395,11 @@ static int msm8x10_wcd_codec_probe(struct snd_soc_codec *codec)
 
 	msm8x10_wcd_priv->micb_en_count = 0;
 
+<<<<<<< HEAD
 #if !defined(CONFIG_SND_SOC_TPA6165A2) && !defined(CONFIG_SND_SOC_FSA8500)
+=======
+#ifndef CONFIG_SND_SOC_TPA6165A2
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 	ret = wcd9xxx_mbhc_init(&msm8x10_wcd_priv->mbhc,
 				&msm8x10_wcd_priv->resmgr,
 				codec, msm8x10_wcd_enable_mbhc_micbias,
@@ -3841,3 +3922,7 @@ MODULE_DESCRIPTION("MSM8x10 Audio codec driver");
 MODULE_LICENSE("GPL v2");
 MODULE_DEVICE_TABLE(i2c, msm8x10_wcd_id_table);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0

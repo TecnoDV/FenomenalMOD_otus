@@ -6287,7 +6287,11 @@ static const struct cpumask *cpu_cpu_mask(int cpu)
 	return cpumask_of_node(cpu_to_node(cpu));
 }
 
+<<<<<<< HEAD
 int sched_smt_power_savings = 0, sched_mc_power_savings = 4;
+=======
+int sched_smt_power_savings = 0, sched_mc_power_savings = 2;
+>>>>>>> ab323a8702abaa54d6d8290051e99d9cf6b212b0
 
 struct sd_data {
 	struct sched_domain **__percpu sd;
